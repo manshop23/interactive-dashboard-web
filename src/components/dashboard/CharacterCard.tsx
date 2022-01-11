@@ -39,8 +39,8 @@ const CharacterCard: FC<CharacterProps> = ({ name, feelWeather, feelNews }) => {
         alignItems="center"
         sx={{
           backgroundColor: "#383737",
-          borderBottomLeftRadius: 14,
-          borderBottomRightRadius: 14,
+          borderBottomLeftRadius: 12,
+          borderBottomRightRadius: 12,
           paddingTop: 2,
           paddingBottom: 2,
         }}
