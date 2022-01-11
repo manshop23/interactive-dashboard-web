@@ -114,13 +114,28 @@ const App: FC = () => {
             </CardItem>
           </Grid>
           <Grid item xs={12} md={4}>
-            <CharacterCard name="โดเรม่อน" feelWeather="ร้อน" feelNews="โศกเศร้า" />
+            <CharacterCard
+              name="โดเรม่อน"
+              image="https://i.pinimg.com/originals/b0/3e/7d/b03e7de6cf718151a6b69d487fb74cdb.png"
+              feelWeather="ร้อน"
+              feelNews="โศกเศร้า"
+            />
           </Grid>
           <Grid item xs={12} md={4}>
-            <CharacterCard name="โนบิตะ" feelWeather="ร้อน" feelNews="โศกเศร้า" />
+            <CharacterCard
+              name="โนบิตะ"
+              image="https://sites.google.com/site/pangweb12/_/rsrc/1487331408404/-nobita/No-bita.png"
+              feelWeather="ร้อน"
+              feelNews="โศกเศร้า"
+            />
           </Grid>
           <Grid item xs={12} md={4}>
-            <CharacterCard name="ชิซูกะ" feelWeather="ร้อน" feelNews="โศกเศร้า" />
+            <CharacterCard
+              name="ชิซูกะ"
+              image="https://sites.google.com/a/pm.ac.th/doraemon-5-8-01/_/rsrc/1511757404383/minamoto-shizuka/Shizuka_2005.png?height=400&width=314"
+              feelWeather="ร้อน"
+              feelNews="โศกเศร้า"
+            />
           </Grid>
         </Grid>
       </Container>

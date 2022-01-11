@@ -1,12 +1,14 @@
 import { Box, Grid, Typography } from "@mui/material"
 import { FC } from "react"
+import Image from "mui-image"
 
 type CharacterProps = {
   name: string
+  image: string
   feelWeather: string
   feelNews: string
 }
-const CharacterCard: FC<CharacterProps> = ({ name, feelWeather, feelNews }) => {
+const CharacterCard: FC<CharacterProps> = ({ name, image, feelWeather, feelNews }) => {
   return (
     <Box
       sx={{
@@ -18,8 +20,8 @@ const CharacterCard: FC<CharacterProps> = ({ name, feelWeather, feelNews }) => {
     >
       <Grid container>
         <Grid item md={4}>
-          <Box justifyContent="center" alignItems="center">
-            <Typography variant="h6">รูปภาพ 1</Typography>
+          <Box display="flex" justifyContent="center" alignItems="center" sx={{ padding: 2 }}>
+            <Image src={image} duration={0} shiftDuration={0} style={{ borderRadius: 12 }} />
           </Box>
         </Grid>
         <Grid item md={8} sx={{ marginTop: 4, marginBottom: 4 }}>
@@ -54,3 +56,5 @@ const CharacterCard: FC<CharacterProps> = ({ name, feelWeather, feelNews }) => {
 }
 
 export default CharacterCard
+
+// place holder image

@@ -13,6 +13,7 @@
     "buffer": "^6.0.3",
     "https-browserify": "^1.0.0",
     "mqtt": "^4.3.4",
+    "mui-image": "^1.0.4",
     "process": "^0.11.10",
     "react": "latest",
     "react-dom": "latest",
