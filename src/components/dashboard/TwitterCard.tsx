@@ -9,9 +9,16 @@ type TwitterProps = {
 const TwitterCard: FC<TwitterProps> = ({ twitter }) => {
   return (
     <Stack direction="row" spacing={2}>
-      <Box sx={{ borderTopLeftRadius: 12, borderBottomLeftRadius: 12, backgroundColor: "#E2E2E2", padding: 2 }}>
-        <Icon fontSize="large" sx={{ color: "#00acee" }}>
-          <Twitter fontSize="large" />
+      <Box
+        sx={{
+          borderTopLeftRadius: 12,
+          borderBottomLeftRadius: 12,
+          backgroundColor: "#E2E2E2",
+          padding: 2,
+        }}
+      >
+        <Icon sx={{ fontSize: 48, color: "#00acee", marginTop: "50%" }}>
+          <Twitter sx={{ fontSize: 48 }} />
         </Icon>
       </Box>
       <Box sx={{ padding: 2 }}>
