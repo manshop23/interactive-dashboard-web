@@ -1,0 +1,52 @@
+{
+  "name": "create-react-app-with-styled-components-typescript",
+  "version": "5.0.0",
+  "private": true,
+  "dependencies": {
+    "@mui/icons-material": "^5.2.5",
+    "@mui/lab": "latest",
+    "@mui/material": "latest",
+    "@mui/styled-engine-sc": "latest",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
+    "buffer": "^6.0.3",
+    "https-browserify": "^1.0.0",
+    "mqtt": "^4.3.4",
+    "process": "^0.11.10",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-scripts": "latest",
+    "stream-http": "^3.2.0",
+    "styled-components": "latest",
+    "url": "^0.11.0"
+  },
+  "scripts": {
+    "tsc": "./node_modules/.bin/tsc",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@craco/craco": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/styled-components": "latest",
+    "craco-alias": "^3.0.1",
+    "typescript": "latest"
+  }
+}
