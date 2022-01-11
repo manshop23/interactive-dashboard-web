@@ -1,11 +1,10 @@
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import { connect } from 'mqtt'
 import type { IWeather, IPM25, ITwitter } from './interfaces/mqtt'
-import { Grid, Icon, Stack } from '@mui/material'
-import { Circle } from '@mui/icons-material'
+import { Grid, Stack } from '@mui/material'
 import { CharacterCard, StationCard, TwitterCard, PM25Card, CardItem, CharacterSelector } from './components/dashboard'
 import { ICharacter } from './interfaces/charactor'
 
@@ -72,7 +71,7 @@ const App: FC = () => {
   const [station002, setStation002] = useState<IWeather>(mockStation002)
   const [pm25001, setPm25001] = useState<IPM25>(mockPM25)
   const [twitter, setTwitter] = useState<ITwitter>(mockTwitter)
-  let client = connect('ws://broker.hivemq.com:8000/mqtt')
+  const client = connect('ws://broker.hivemq.com:8000/mqtt')
   client.on('connect', function () {
     setConnectionStatue('connected')
     client.subscribe(topic)
@@ -81,8 +80,12 @@ const App: FC = () => {
     handleIncomingMessage(message)
   })
 
+  useEffect(() => {
+    console.log('Connection Status: ', connectionStatue)
+  }, [connectionStatue])
+
   const handleIncomingMessage = (message: Buffer) => {
-    let data = JSON.parse(message.toString())
+    const data = JSON.parse(message.toString())
     if (data.name === 'station001') {
       setStation001(data)
     } else if (data.name === 'station002') {
