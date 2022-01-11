@@ -1,11 +1,11 @@
 import { Box, Paper, Typography } from "@mui/material"
-import { FunctionComponent } from "react"
+import { FC } from "react"
 import { IPM25 } from "../../interfaces/mqtt"
 
 type PM25Props = {
   pm25: IPM25
 }
-const PM25Card: FunctionComponent<PM25Props> = ({ pm25 }) => {
+const PM25Card: FC<PM25Props> = ({ pm25 }) => {
   const pm25level = () => {
     const value = pm25.data.pm25
     if (value >= 0 && value < 12.1) {

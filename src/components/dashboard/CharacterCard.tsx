@@ -1,12 +1,12 @@
 import { Box, Grid, Typography } from "@mui/material"
-import { FunctionComponent } from "react"
+import { FC } from "react"
 
 type CharacterProps = {
   name: string
   feelWeather: string
   feelNews: string
 }
-const CharacterCard: FunctionComponent<CharacterProps> = ({ name, feelWeather, feelNews }) => {
+const CharacterCard: FC<CharacterProps> = ({ name, feelWeather, feelNews }) => {
   return (
     <Box
       sx={{
@@ -37,7 +37,13 @@ const CharacterCard: FunctionComponent<CharacterProps> = ({ name, feelWeather, f
         display="flex"
         justifyContent="center"
         alignItems="center"
-        sx={{ backgroundColor: "#383737", borderBottomLeftRadius: 14, borderBottomRightRadius: 14 }}
+        sx={{
+          backgroundColor: "#383737",
+          borderBottomLeftRadius: 14,
+          borderBottomRightRadius: 14,
+          paddingTop: 2,
+          paddingBottom: 2,
+        }}
       >
         <Typography variant="h5" color="white">
           {name}

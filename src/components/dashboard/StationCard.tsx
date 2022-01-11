@@ -1,11 +1,11 @@
 import { Box, Paper, Typography } from "@mui/material"
-import { FunctionComponent } from "react"
+import { FC } from "react"
 import { IWeather } from "../../interfaces/mqtt"
 
 type StationProps = {
   station: IWeather
 }
-const StationCard: FunctionComponent<StationProps> = ({ station }) => {
+const StationCard: FC<StationProps> = ({ station }) => {
   return (
     <Box>
       <Paper

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useState } from "react"
+import { FC, useState } from "react"
 import Container from "@mui/material/Container"
 import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
@@ -6,7 +6,7 @@ import { connect } from "mqtt"
 import type { IWeather, IPM25, ITwitter } from "./interfaces/mqtt"
 import { Divider, Grid, Icon, Paper, Stack } from "@mui/material"
 import { Circle } from "@mui/icons-material"
-import { CharacterCard, StationCard, TwitterCard, PM25Card } from "./components/dashboard"
+import { CharacterCard, StationCard, TwitterCard, PM25Card, CardItem } from "./components/dashboard"
 
 const mockStation001: IWeather = {
   name: "station001",
@@ -38,7 +38,7 @@ const mockTwitter: ITwitter = {
     text: "เราว่าน้องเค้า . . . . น่ารักดีนะ \nตอนนี้ประกอบอาหารเก่งขึ้นกว่าเมื่อก่อนแล้วละ\nเมื่อก่อนเทนมใส่คอนเฟลกก็เท่แล้ว55… https://t.co/d4xTPQdZpy",
   },
 }
-const App: FunctionComponent = () => {
+const App: FC = () => {
   const [connectionStatue, setConnectionStatue] = useState("connecting")
   const topic = "e775b1245d94ea4a79be6ce40cf96929"
   const [station001, setStation001] = useState<IWeather>(mockStation001)
@@ -66,7 +66,6 @@ const App: FunctionComponent = () => {
       setTwitter(data)
     }
   }
-
   return (
     <Box
       sx={{
@@ -95,49 +94,25 @@ const App: FunctionComponent = () => {
                 <Typography color="white">Subscribe Topic: {topic}</Typography>
               </Box>
             </Stack>
-            <Stack sx={{ marginTop: 4, alignContent: "center", alignItems: "center" }}>
-              <Box
-                sx={{ paddingBottom: 2, paddingRight: 4, paddingLeft: 4, backgroundColor: "#383737", borderRadius: 4 }}
-              >
-                <Typography variant="h5" color="white">
-                  รายงานข่าว
-                </Typography>
-              </Box>
+            <CardItem title="รายงานข่าว">
               <TwitterCard twitter={twitter} />
-            </Stack>
+            </CardItem>
           </Grid>
           <Grid item md={6}>
-            <Stack sx={{ marginTop: 4, alignContent: "center", alignItems: "center" }}>
-              <Box
-                sx={{ paddingBottom: 2, paddingRight: 4, paddingLeft: 4, backgroundColor: "#383737", borderRadius: 4 }}
+            <CardItem title="สภาพอากาศ">
+              <Stack
+                direction="row"
+                alignItems="flex-start"
+                justifyContent="space-evenly"
+                spacing={2}
+                divider={<Divider orientation="vertical" variant="middle" flexItem />}
+                sx={{ margin: 2 }}
               >
-                <Typography variant="h5" color="white">
-                  รายงานสภาพอากาศ
-                </Typography>
-              </Box>
-              <Box
-                sx={{
-                  backgroundColor: "white",
-                  borderRadius: 4,
-                  top: -15,
-                  position: "relative",
-                }}
-                minWidth="100%"
-              >
-                <Stack
-                  direction="row"
-                  alignItems="flex-start"
-                  justifyContent="space-evenly"
-                  spacing={2}
-                  divider={<Divider orientation="vertical" variant="middle" flexItem />}
-                  sx={{ margin: 2 }}
-                >
-                  <StationCard station={station001} />
-                  <StationCard station={station002} />
-                  <PM25Card pm25={pm25001} />
-                </Stack>
-              </Box>
-            </Stack>
+                <StationCard station={station001} />
+                <StationCard station={station002} />
+                <PM25Card pm25={pm25001} />
+              </Stack>
+            </CardItem>
           </Grid>
           <Grid item md={4}>
             <CharacterCard name="โดเรม่อน" feelWeather="ร้อน" feelNews="โศกเศร้า" />
