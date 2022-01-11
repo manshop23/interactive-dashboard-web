@@ -9,7 +9,7 @@ type CharacterProps = {
   character: ICharacter
 }
 const CharacterCard: FC<CharacterProps> = ({ character }) => {
-  const [emotion, setEmotion] = useState(true)
+  const [emotion, setEmotion] = useState(false)
   const [mute, setMute] = useState(true)
   const rainSoundUrl = process.env.PUBLIC_URL + "/sounds/rain.mp3"
   const walkingSoundUrl = process.env.PUBLIC_URL + "/sounds/walking.mp3"

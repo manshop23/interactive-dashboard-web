@@ -103,7 +103,7 @@ const App: FC = () => {
       }}
     >
       <Container maxWidth="xl">
-        <Grid container spacing={2} padding={2}>
+        <Grid container spacing={2} paddingTop={2}>
           <Grid item md={6}>
             <Typography variant="h3" color="white">
               Interactive device System
@@ -138,7 +138,7 @@ const App: FC = () => {
           </Grid>
           <Grid item md={6}>
             <CardItem title="สภาพอากาศ">
-              <Grid container alignItems="flex-start" justifyContent="space-evenly" spacing={2} sx={{ padding: 2 }}>
+              <Grid container alignItems="flex-start" justifyContent="space-evenly" spacing={2}>
                 <Grid item xs={12} md={4}>
                   <StationCard station={station001} />
                 </Grid>

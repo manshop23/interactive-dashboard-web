@@ -8,11 +8,11 @@ type StationProps = {
 }
 const StationCard: FC<StationProps> = ({ station }) => {
   return (
-    <Box>
+    <Box sx={{ paddingTop: 2 }}>
       <Box display="flex" alignItems="center" justifyContent="center">
         <CardTitle title={`สถานี: ${station.name}`} />
       </Box>
-      <Box sx={{ paddingTop: 2, minHeight: 220 }}>
+      <Box sx={{ paddingTop: 2, paddingLeft: 2, minHeight: 220 }}>
         <Box>
           <Typography variant="h6">อุณหภูมิ: {station.data.temp} °C</Typography>
         </Box>
