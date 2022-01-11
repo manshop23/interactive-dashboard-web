@@ -19,7 +19,14 @@ const CharacterCard: FC<CharacterProps> = ({ character }) => {
       <Grid container>
         <Grid item md={4}>
           <Box display="flex" justifyContent="center" alignItems="center" sx={{ paddingTop: 2 }}>
-            <Image src={character.image} duration={0} shiftDuration={0} style={{ borderRadius: 12 }} />
+            <Image
+              src={character.image}
+              duration={0}
+              shiftDuration={0}
+              style={{ borderRadius: 12 }}
+              height={200}
+              fit="contain"
+            />
           </Box>
         </Grid>
         <Grid item md={8} sx={{ marginTop: 4, marginBottom: 4 }}>

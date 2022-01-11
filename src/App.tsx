@@ -108,7 +108,7 @@ const App: FC = () => {
             <Typography variant="h3" color="white">
               Interactive device System
             </Typography>
-            <Stack sx={{ marginTop: 4 }} spacing={2} direction="row">
+            {/* <Stack sx={{ marginTop: 4 }} spacing={2} direction="row">
               <Box>
                 <Icon fontSize="large" sx={{ color: connectionStatue === "connected" ? "#33DC18" : "#FFCC2D" }}>
                   <Circle fontSize="large" />
@@ -120,10 +120,11 @@ const App: FC = () => {
                 </Typography>
                 <Typography color="white">Subscribe Topic: {topic}</Typography>
               </Box>
-            </Stack>
+            </Stack> */}
             <CardItem title="รายงานข่าว">
               <TwitterCard twitter={twitter} />
             </CardItem>
+
             <Stack direction="row">
               <Typography variant="h4" color="white">
                 Choose character:
@@ -156,7 +157,7 @@ const App: FC = () => {
             })
             .map((character) => {
               return (
-                <Grid item xs={12} md={4}>
+                <Grid item xs={12} md={6}>
                   <CharacterCard character={character} />
                 </Grid>
               )
