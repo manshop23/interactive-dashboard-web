@@ -46,9 +46,9 @@ const App: FC = () => {
   const [pm25001, setPm25001] = useState<IPM25>(mockPM25)
   const [twitter, setTwitter] = useState<ITwitter>(mockTwitter)
   let client = connect("ws://broker.hivemq.com:8000/mqtt")
-  client.subscribe(topic)
   client.on("connect", function () {
     setConnectionStatue("connected")
+    client.subscribe(topic)
   })
   client.on("message", function (topic, message) {
     handleIncomingMessage(message)
