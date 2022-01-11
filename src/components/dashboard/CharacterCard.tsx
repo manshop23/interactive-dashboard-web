@@ -41,7 +41,7 @@ const CharacterCard: FC<CharacterProps> = ({ character }) => {
       minWidth='100%'
     >
       <Grid container>
-        <Grid item md={4}>
+        <Grid item xs={12} md={4}>
           <Box display='flex' justifyContent='center' alignItems='center' sx={{ paddingTop: 2 }}>
             <Image
               src={character.image}
@@ -53,7 +53,7 @@ const CharacterCard: FC<CharacterProps> = ({ character }) => {
             />
           </Box>
         </Grid>
-        <Grid item md={7} sx={{ marginTop: 4, marginBottom: 4 }}>
+        <Grid item xs={10} md={7} sx={{ marginTop: 4, marginBottom: 4, paddingLeft: 2 }}>
           <Box>
             <Typography variant='h6'>ความรู้สึกต่อสภาพอากาศ</Typography>
             <Typography variant='h5'>{character.feelWeather}</Typography>
@@ -63,7 +63,7 @@ const CharacterCard: FC<CharacterProps> = ({ character }) => {
             <Typography variant='h5'>{character.feelNews}</Typography>
           </Box>
         </Grid>
-        <Grid item md={1} sx={{ marginTop: 4 }}>
+        <Grid item xs={2} md={1} sx={{ marginTop: 4 }}>
           <IconButton
             onClick={() => {
               setMute(!mute)
@@ -101,5 +101,3 @@ const CharacterCard: FC<CharacterProps> = ({ character }) => {
 }
 
 export default CharacterCard
-
-// place holder image

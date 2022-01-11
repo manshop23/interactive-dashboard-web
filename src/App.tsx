@@ -105,7 +105,7 @@ const App: FC = () => {
     >
       <Container maxWidth='xl'>
         <Grid container spacing={2}>
-          <Grid item md={6}>
+          <Grid item xs={12} md={6}>
             <Typography variant='h3' color='white'>
               <Icon
                 fontSize='large'
@@ -129,7 +129,7 @@ const App: FC = () => {
               />
             </Stack>
           </Grid>
-          <Grid item md={6} sx={{ position: 'relative' }}>
+          <Grid item xs={12} md={6} sx={{ position: 'relative' }}>
             <Box sx={{ position: 'absolute', left: '59%', top: 5, zIndex: 10 }}>
               <Image src='/images/weather-logo.png' fit='contain' duration={0} shiftDuration={0} width={124} />
             </Box>
