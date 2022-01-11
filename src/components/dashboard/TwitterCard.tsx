@@ -21,8 +21,10 @@ const TwitterCard: FC<TwitterProps> = ({ twitter }) => {
           <Twitter sx={{ fontSize: 48 }} />
         </Icon>
       </Box>
-      <Box sx={{ padding: 2 }}>
-        <Typography variant='h6'>{twitter.data.text}</Typography>
+      <Box sx={{ paddingTop: 2, paddingBottom: 2, minWidth: '80%' }}>
+        <Box>
+          <Typography variant='h6'>{twitter.data.text}</Typography>
+        </Box>
         <Stack direction='row' justifyContent='space-evenly' alignItems='center' spacing={2}>
           <Box display='flex'>
             <ChatBubbleRounded sx={{ fontSize: 24, color: '#383737', marginRight: 1 }} />
