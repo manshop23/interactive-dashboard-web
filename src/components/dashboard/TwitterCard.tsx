@@ -8,20 +8,23 @@ type TwitterProps = {
 }
 const TwitterCard: FC<TwitterProps> = ({ twitter }) => {
   return (
-    <Stack direction='row' spacing={2}>
+    <Stack direction='row'>
       <Box
+        display='flex'
+        alignItems='center'
+        justifyContent='center'
         sx={{
           borderTopLeftRadius: 12,
           borderBottomLeftRadius: 12,
           backgroundColor: '#E2E2E2',
-          padding: 2
+          minWidth: '12%'
         }}
       >
-        <Icon sx={{ fontSize: 48, color: '#00acee', marginTop: 1 }}>
-          <Twitter sx={{ fontSize: 48 }} />
+        <Icon sx={{ fontSize: 52, color: '#00acee' }}>
+          <Twitter sx={{ fontSize: 52 }} />
         </Icon>
       </Box>
-      <Box sx={{ paddingTop: 2, paddingBottom: 2, minWidth: '80%' }}>
+      <Box sx={{ paddingLeft: 2, paddingTop: 2, paddingBottom: 2, minWidth: '82%' }}>
         <Box>
           <Typography variant='h6'>{twitter.data.text}</Typography>
         </Box>
