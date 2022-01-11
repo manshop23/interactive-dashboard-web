@@ -76,7 +76,7 @@ const App: FC = () => {
       }}
     >
       <Container maxWidth="xl">
-        <Grid container spacing={2} margin={2}>
+        <Grid container spacing={2} padding={2}>
           <Grid item md={6}>
             <Typography variant="h3" color="white">
               Interactive device System
@@ -100,27 +100,26 @@ const App: FC = () => {
           </Grid>
           <Grid item md={6}>
             <CardItem title="สภาพอากาศ">
-              <Stack
-                direction="row"
-                alignItems="flex-start"
-                justifyContent="space-evenly"
-                spacing={2}
-                divider={<Divider orientation="vertical" variant="middle" flexItem />}
-                sx={{ margin: 2 }}
-              >
-                <StationCard station={station001} />
-                <StationCard station={station002} />
-                <PM25Card pm25={pm25001} />
-              </Stack>
+              <Grid container alignItems="flex-start" justifyContent="space-evenly" spacing={2} sx={{ padding: 2 }}>
+                <Grid item xs={12} md={4}>
+                  <StationCard station={station001} />
+                </Grid>
+                <Grid item xs={12} md={4}>
+                  <StationCard station={station002} />
+                </Grid>
+                <Grid item xs={12} md={4}>
+                  <PM25Card pm25={pm25001} />
+                </Grid>
+              </Grid>
             </CardItem>
           </Grid>
-          <Grid item md={4}>
+          <Grid item xs={12} md={4}>
             <CharacterCard name="โดเรม่อน" feelWeather="ร้อน" feelNews="โศกเศร้า" />
           </Grid>
-          <Grid item md={4}>
+          <Grid item xs={12} md={4}>
             <CharacterCard name="โนบิตะ" feelWeather="ร้อน" feelNews="โศกเศร้า" />
           </Grid>
-          <Grid item md={4}>
+          <Grid item xs={12} md={4}>
             <CharacterCard name="ชิซูกะ" feelWeather="ร้อน" feelNews="โศกเศร้า" />
           </Grid>
         </Grid>
