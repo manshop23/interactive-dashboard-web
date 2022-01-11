@@ -37,7 +37,7 @@ const CharacterCard: FunctionComponent<CharacterProps> = ({ name, feelWeather, f
         display="flex"
         justifyContent="center"
         alignItems="center"
-        sx={{ backgroundColor: "#383737", borderBottomLeftRadius: 16, borderBottomRightRadius: 16 }}
+        sx={{ backgroundColor: "#383737", borderBottomLeftRadius: 14, borderBottomRightRadius: 14 }}
       >
         <Typography variant="h5" color="white">
           {name}

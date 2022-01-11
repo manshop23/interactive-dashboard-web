@@ -18,7 +18,7 @@ const TwitterCard: FunctionComponent<TwitterProps> = ({ twitter }) => {
       minWidth="100%"
     >
       <Stack direction="row" spacing={2}>
-        <Box sx={{ borderTopLeftRadius: 16, borderBottomLeftRadius: 16, backgroundColor: "#E2E2E2", padding: 2 }}>
+        <Box sx={{ borderTopLeftRadius: 14, borderBottomLeftRadius: 14, backgroundColor: "#E2E2E2", padding: 2 }}>
           <Icon fontSize="large" sx={{ color: "#00acee" }}>
             <Twitter fontSize="large" />
           </Icon>
