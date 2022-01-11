@@ -1,5 +1,5 @@
-declare module "mui-image" {
-  import React from "react"
+declare module 'mui-image' {
+  import React from 'react'
 
   export interface MuiImageProps {
     alt?: string
@@ -9,12 +9,12 @@ declare module "mui-image" {
     duration?: number
     easing?: string
     errorIcon?: boolean | React.ReactNode
-    fit?: "contain" | "cover" | "fill" | "none" | "scale-down" | "inherit" | "initial" | "revert" | "unset"
+    fit?: 'contain' | 'cover' | 'fill' | 'none' | 'scale-down' | 'inherit' | 'initial' | 'revert' | 'unset'
     height?: string | number
     iconWrapperClassName?: string
     iconWrapperStyle?: any
-    position?: "static" | "relative" | "absolute" | "fixed" | "sticky" | "inherit" | "initial" | "revert" | "unset"
-    shift?: "left" | "right" | "top" | "bottom" | false | null
+    position?: 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky' | 'inherit' | 'initial' | 'revert' | 'unset'
+    shift?: 'left' | 'right' | 'top' | 'bottom' | false | null
     shiftDuration?: number
     showLoading?: boolean | React.ReactNode
     src: string
