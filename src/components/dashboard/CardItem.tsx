@@ -6,7 +6,7 @@ type CardProps = {
 }
 const CardItem: FC<CardProps> = ({ title, children }) => {
   return (
-    <Stack sx={{ marginTop: 4, alignContent: 'center', alignItems: 'center' }}>
+    <Stack sx={{ marginTop: 2, alignContent: 'center', alignItems: 'center' }}>
       <Box sx={{ paddingBottom: 2, paddingRight: 4, paddingLeft: 4, backgroundColor: '#383737', borderRadius: 4 }}>
         <Typography variant='h5' color='white'>
           {title}

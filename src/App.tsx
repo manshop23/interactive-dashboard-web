@@ -4,9 +4,10 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import { connect } from 'mqtt'
 import type { IWeather, IPM25, ITwitter } from './interfaces/mqtt'
-import { Grid, Stack } from '@mui/material'
+import { Grid, Icon, Stack } from '@mui/material'
 import { CharacterCard, StationCard, TwitterCard, PM25Card, CardItem, CharacterSelector } from './components/dashboard'
 import { ICharacter } from './interfaces/charactor'
+import { Circle } from '@mui/icons-material'
 
 const mockStation001: IWeather = {
   name: 'station001',
@@ -106,24 +107,17 @@ const App: FC = () => {
       }}
     >
       <Container maxWidth='xl'>
-        <Grid container spacing={2} paddingTop={2}>
+        <Grid container spacing={2}>
           <Grid item md={6}>
             <Typography variant='h3' color='white'>
+              <Icon
+                fontSize='large'
+                sx={{ color: connectionStatue === 'connected' ? '#33DC18' : '#FFCC2D', marginRight: 2 }}
+              >
+                <Circle fontSize='large' />
+              </Icon>
               Interactive device System
             </Typography>
-            {/* <Stack sx={{ marginTop: 4 }} spacing={2} direction="row">
-              <Box>
-                <Icon fontSize="large" sx={{ color: connectionStatue === "connected" ? "#33DC18" : "#FFCC2D" }}>
-                  <Circle fontSize="large" />
-                </Icon>
-              </Box>
-              <Box>
-                <Typography variant="h4" color="white">
-                  Status: {connectionStatue}
-                </Typography>
-                <Typography color="white">Subscribe Topic: {topic}</Typography>
-              </Box>
-            </Stack> */}
             <CardItem title='รายงานข่าว'>
               <TwitterCard twitter={twitter} />
             </CardItem>
