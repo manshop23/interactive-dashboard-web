@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useState } from 'react'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
@@ -131,13 +131,7 @@ const App: FC = () => {
           </Grid>
           <Grid item md={6} sx={{ position: 'relative' }}>
             <Box sx={{ position: 'absolute', left: '59%', top: 5, zIndex: 10 }}>
-              <Image
-                src={process.env.PUBLIC_URL + '/images/weather-logo.png'}
-                fit='contain'
-                duration={0}
-                shiftDuration={0}
-                width={124}
-              />
+              <Image src='/images/weather-logo.png' fit='contain' duration={0} shiftDuration={0} width={124} />
             </Box>
             <CardItem title='สภาพอากาศ'>
               <Grid container alignItems='flex-start' justifyContent='space-evenly' spacing={2}>
