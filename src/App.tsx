@@ -7,6 +7,7 @@ import type { IWeather, IPM25, ITwitter } from "./interfaces/mqtt"
 import { Grid, Icon, Stack } from "@mui/material"
 import { Circle } from "@mui/icons-material"
 import { CharacterCard, StationCard, TwitterCard, PM25Card, CardItem } from "./components/dashboard"
+import { ICharacter } from "./interfaces/charactor"
 
 const mockStation001: IWeather = {
   name: "station001",
@@ -38,6 +39,29 @@ const mockTwitter: ITwitter = {
     text: "เราว่าน้องเค้า . . . . น่ารักดีนะ \nตอนนี้ประกอบอาหารเก่งขึ้นกว่าเมื่อก่อนแล้วละ\nเมื่อก่อนเทนมใส่คอนเฟลกก็เท่แล้ว55… https://t.co/d4xTPQdZpy",
   },
 }
+
+const mockCharacter1: ICharacter = {
+  name: "โดเรม่อน",
+  image: "https://i.pinimg.com/originals/b0/3e/7d/b03e7de6cf718151a6b69d487fb74cdb.png",
+  feelWeather: "ร้อนมาก",
+  feelNews: "รู้สึกดีมาก",
+}
+
+const mockCharacter2: ICharacter = {
+  name: "โนบิตะ",
+  image: "https://sites.google.com/site/pangweb12/_/rsrc/1487331408404/-nobita/No-bita.png",
+  feelWeather: "ร้อน",
+  feelNews: "รู้สึกดีมาก",
+}
+
+const mockCharacter3: ICharacter = {
+  name: "ชิซูกะ",
+  image:
+    "https://sites.google.com/a/pm.ac.th/doraemon-5-8-01/_/rsrc/1511757404383/minamoto-shizuka/Shizuka_2005.png?height=400&width=314",
+  feelWeather: "ร้อนนิดหน่อย",
+  feelNews: "โศกเศร้า",
+}
+
 const App: FC = () => {
   const [connectionStatue, setConnectionStatue] = useState("connecting")
   const topic = "e775b1245d94ea4a79be6ce40cf96929"
@@ -114,28 +138,13 @@ const App: FC = () => {
             </CardItem>
           </Grid>
           <Grid item xs={12} md={4}>
-            <CharacterCard
-              name="โดเรม่อน"
-              image="https://i.pinimg.com/originals/b0/3e/7d/b03e7de6cf718151a6b69d487fb74cdb.png"
-              feelWeather="ร้อน"
-              feelNews="โศกเศร้า"
-            />
+            <CharacterCard character={mockCharacter1} />
           </Grid>
           <Grid item xs={12} md={4}>
-            <CharacterCard
-              name="โนบิตะ"
-              image="https://sites.google.com/site/pangweb12/_/rsrc/1487331408404/-nobita/No-bita.png"
-              feelWeather="ร้อน"
-              feelNews="โศกเศร้า"
-            />
+            <CharacterCard character={mockCharacter2} />
           </Grid>
           <Grid item xs={12} md={4}>
-            <CharacterCard
-              name="ชิซูกะ"
-              image="https://sites.google.com/a/pm.ac.th/doraemon-5-8-01/_/rsrc/1511757404383/minamoto-shizuka/Shizuka_2005.png?height=400&width=314"
-              feelWeather="ร้อน"
-              feelNews="โศกเศร้า"
-            />
+            <CharacterCard character={mockCharacter3} />
           </Grid>
         </Grid>
       </Container>

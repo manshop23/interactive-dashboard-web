@@ -1,14 +1,12 @@
 import { Box, Grid, Typography } from "@mui/material"
 import { FC } from "react"
 import Image from "mui-image"
+import { ICharacter } from "../../interfaces/charactor"
 
 type CharacterProps = {
-  name: string
-  image: string
-  feelWeather: string
-  feelNews: string
+  character: ICharacter
 }
-const CharacterCard: FC<CharacterProps> = ({ name, image, feelWeather, feelNews }) => {
+const CharacterCard: FC<CharacterProps> = ({ character }) => {
   return (
     <Box
       sx={{
@@ -20,18 +18,18 @@ const CharacterCard: FC<CharacterProps> = ({ name, image, feelWeather, feelNews 
     >
       <Grid container>
         <Grid item md={4}>
-          <Box display="flex" justifyContent="center" alignItems="center" sx={{ padding: 2 }}>
-            <Image src={image} duration={0} shiftDuration={0} style={{ borderRadius: 12 }} />
+          <Box display="flex" justifyContent="center" alignItems="center" sx={{ paddingTop: 2 }}>
+            <Image src={character.image} duration={0} shiftDuration={0} style={{ borderRadius: 12 }} />
           </Box>
         </Grid>
         <Grid item md={8} sx={{ marginTop: 4, marginBottom: 4 }}>
           <Box>
             <Typography variant="h6">ความรู้สึกต่อสภาพอากาศ</Typography>
-            <Typography variant="h5">{feelWeather}</Typography>
+            <Typography variant="h5">{character.feelWeather}</Typography>
           </Box>
           <Box sx={{ marginTop: 4 }}>
             <Typography variant="h6">ความรู้สึกต่อข่าว / สิ่งรอบตัว</Typography>
-            <Typography variant="h5">{feelNews}</Typography>
+            <Typography variant="h5">{character.feelNews}</Typography>
           </Box>
         </Grid>
       </Grid>
@@ -48,7 +46,7 @@ const CharacterCard: FC<CharacterProps> = ({ name, image, feelWeather, feelNews 
         }}
       >
         <Typography variant="h5" color="white">
-          {name}
+          {character.name}
         </Typography>
       </Box>
     </Box>
