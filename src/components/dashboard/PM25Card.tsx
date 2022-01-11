@@ -48,7 +48,7 @@ const PM25Card: FC<PM25Props> = ({ pm25 }) => {
       <Box display='flex' alignItems='center' justifyContent='center'>
         <CardTitle title={`สถานี: ${pm25.name}`} />
       </Box>
-      <Box sx={{ paddingTop: 2, paddingLeft: 2 }}>
+      <Box sx={{ paddingTop: 2, paddingLeft: 2, minHeight: 228 }}>
         <Typography variant='h6'>PM2.5: {pm25.data.pm25}</Typography>
         <Typography>
           คุณภาพอากาศ:

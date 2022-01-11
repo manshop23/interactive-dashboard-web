@@ -8,6 +8,7 @@ import { Grid, Icon, Stack } from '@mui/material'
 import { CharacterCard, StationCard, TwitterCard, PM25Card, CardItem, CharacterSelector } from './components/dashboard'
 import { ICharacter } from './interfaces/charactor'
 import { Circle } from '@mui/icons-material'
+import Image from 'mui-image'
 
 const mockStation001: IWeather = {
   name: 'station001',
@@ -117,7 +118,6 @@ const App: FC = () => {
             <CardItem title='รายงานข่าว'>
               <TwitterCard twitter={twitter} />
             </CardItem>
-
             <Stack direction='row'>
               <Typography variant='h4' color='white'>
                 Choose character:
@@ -129,7 +129,16 @@ const App: FC = () => {
               />
             </Stack>
           </Grid>
-          <Grid item md={6}>
+          <Grid item md={6} sx={{ position: 'relative' }}>
+            <Box sx={{ position: 'absolute', left: '59%', top: 5, zIndex: 10 }}>
+              <Image
+                src={process.env.PUBLIC_URL + '/images/weather-logo.png'}
+                fit='contain'
+                duration={0}
+                shiftDuration={0}
+                width={124}
+              />
+            </Box>
             <CardItem title='สภาพอากาศ'>
               <Grid container alignItems='flex-start' justifyContent='space-evenly' spacing={2}>
                 <Grid item xs={12} md={4}>
