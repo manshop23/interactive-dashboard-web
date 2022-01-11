@@ -17,14 +17,16 @@ const TwitterCard: FC<TwitterProps> = ({ twitter }) => {
           borderTopLeftRadius: 12,
           borderBottomLeftRadius: 12,
           backgroundColor: '#E2E2E2',
-          minWidth: '12%'
+          minWidth: '12%',
+          paddingLeft: 2,
+          paddingRight: 2
         }}
       >
         <Icon sx={{ fontSize: 52, color: '#00acee' }}>
           <Twitter sx={{ fontSize: 52 }} />
         </Icon>
       </Box>
-      <Box sx={{ paddingLeft: 2, paddingTop: 2, paddingBottom: 2, minWidth: '82%' }}>
+      <Box sx={{ padding: 2, minWidth: '82%' }}>
         <Box>
           <Typography variant='h6'>{twitter.data.text}</Typography>
         </Box>
