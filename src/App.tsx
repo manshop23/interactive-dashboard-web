@@ -155,9 +155,9 @@ const App: FC = () => {
             .filter((character) => {
               return characterName.includes(character.name)
             })
-            .map((character) => {
+            .map((character, idx) => {
               return (
-                <Grid item xs={12} md={6}>
+                <Grid key={idx} item xs={12} md={6}>
                   <CharacterCard character={character} />
                 </Grid>
               )

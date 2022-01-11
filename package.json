@@ -20,7 +20,8 @@
     "react-scripts": "latest",
     "stream-http": "^3.2.0",
     "styled-components": "latest",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "use-sound": "^4.0.1"
   },
   "scripts": {
     "tsc": "./node_modules/.bin/tsc",
