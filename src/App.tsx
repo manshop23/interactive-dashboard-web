@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import { connect } from "mqtt"
 import type { IWeather, IPM25, ITwitter } from "./interfaces/mqtt"
-import { Divider, Grid, Icon, Paper, Stack } from "@mui/material"
+import { Grid, Icon, Stack } from "@mui/material"
 import { Circle } from "@mui/icons-material"
 import { CharacterCard, StationCard, TwitterCard, PM25Card, CardItem } from "./components/dashboard"
 
