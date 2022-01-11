@@ -1,4 +1,4 @@
-import { Box, Paper, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import { FC } from 'react'
 import { IWeather } from '../../interfaces/mqtt'
 import CardTitle from './CardTitle'
