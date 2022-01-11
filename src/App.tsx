@@ -67,11 +67,11 @@ const mockCharacters: ICharacter[] = [mockCharacter1, mockCharacter2, mockCharac
 const App: FC = () => {
   const [characterName, setCharacterName] = useState<string[]>([mockCharacters[0].name])
   const [connectionStatue, setConnectionStatue] = useState('connecting')
-  const topic = 'e775b1245d94ea4a79be6ce40cf96929'
   const [station001, setStation001] = useState<IWeather>(mockStation001)
   const [station002, setStation002] = useState<IWeather>(mockStation002)
   const [pm25001, setPm25001] = useState<IPM25>(mockPM25)
   const [twitter, setTwitter] = useState<ITwitter>(mockTwitter)
+  const topic = 'e775b1245d94ea4a79be6ce40cf96929'
   const client = connect('ws://broker.hivemq.com:8000/mqtt')
   client.on('connect', function () {
     setConnectionStatue('connected')
