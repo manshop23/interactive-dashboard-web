@@ -1,6 +1,7 @@
 import { Box, Paper, Typography } from "@mui/material"
 import { FC } from "react"
 import { IPM25 } from "../../interfaces/mqtt"
+import CardTitle from "./CardTitle"
 
 type PM25Props = {
   pm25: IPM25
@@ -44,18 +45,9 @@ const PM25Card: FC<PM25Props> = ({ pm25 }) => {
   const { color, text } = pm25level()
   return (
     <Box>
-      <Paper
-        sx={{
-          backgroundColor: "#383737",
-          borderRadius: 2,
-          width: 200,
-          paddingLeft: 2,
-        }}
-      >
-        <Typography variant="h6" color="white">
-          สถานี: {pm25.name}
-        </Typography>
-      </Paper>
+      <Box display="flex" alignItems="center" justifyContent="center">
+        <CardTitle title={`สถานี: ${pm25.name}`} />
+      </Box>
       <Box sx={{ marginTop: 2 }}>
         <Typography variant="h6">PM2.5: {pm25.data.pm25}</Typography>
         <Typography>

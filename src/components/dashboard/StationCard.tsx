@@ -1,6 +1,7 @@
 import { Box, Paper, Typography } from "@mui/material"
 import { FC } from "react"
 import { IWeather } from "../../interfaces/mqtt"
+import CardTitle from "./CardTitle"
 
 type StationProps = {
   station: IWeather
@@ -9,20 +10,8 @@ const StationCard: FC<StationProps> = ({ station }) => {
   return (
     <Box>
       <Box display="flex" alignItems="center" justifyContent="center">
-        <Paper
-          sx={{
-            backgroundColor: "#383737",
-            borderRadius: 2,
-            width: 200,
-            paddingLeft: 2,
-          }}
-        >
-          <Typography variant="h6" color="white">
-            สถานี: {station.name}
-          </Typography>
-        </Paper>
+        <CardTitle title={`สถานี: ${station.name}`} />
       </Box>
-
       <Box sx={{ marginTop: 2 }}>
         <Typography variant="h6">อุณหภูมิ: {station.data.temp} °C</Typography>
         <Typography variant="h6">ความชื้น: {station.data.humid} %</Typography>
