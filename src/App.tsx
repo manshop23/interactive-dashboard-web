@@ -6,7 +6,7 @@ import { connect } from "mqtt"
 import type { IWeather, IPM25, ITwitter } from "./interfaces/mqtt"
 import { Grid, Icon, Stack } from "@mui/material"
 import { Circle } from "@mui/icons-material"
-import { CharacterCard, StationCard, TwitterCard, PM25Card, CardItem } from "./components/dashboard"
+import { CharacterCard, StationCard, TwitterCard, PM25Card, CardItem, CharacterSelector } from "./components/dashboard"
 import { ICharacter } from "./interfaces/charactor"
 
 const mockStation001: IWeather = {
@@ -62,7 +62,10 @@ const mockCharacter3: ICharacter = {
   feelNews: "โศกเศร้า",
 }
 
+const mockCharacters: ICharacter[] = [mockCharacter1, mockCharacter2, mockCharacter3]
+
 const App: FC = () => {
+  const [characterName, setCharacterName] = useState<string[]>([mockCharacters[0].name])
   const [connectionStatue, setConnectionStatue] = useState("connecting")
   const topic = "e775b1245d94ea4a79be6ce40cf96929"
   const [station001, setStation001] = useState<IWeather>(mockStation001)
@@ -121,6 +124,16 @@ const App: FC = () => {
             <CardItem title="รายงานข่าว">
               <TwitterCard twitter={twitter} />
             </CardItem>
+            <Stack direction="row">
+              <Typography variant="h4" color="white">
+                Choose character:
+              </Typography>
+              <CharacterSelector
+                characters={mockCharacters}
+                characterName={characterName}
+                setCharacterName={setCharacterName}
+              />
+            </Stack>
           </Grid>
           <Grid item md={6}>
             <CardItem title="สภาพอากาศ">
@@ -137,15 +150,17 @@ const App: FC = () => {
               </Grid>
             </CardItem>
           </Grid>
-          <Grid item xs={12} md={4}>
-            <CharacterCard character={mockCharacter1} />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <CharacterCard character={mockCharacter2} />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <CharacterCard character={mockCharacter3} />
-          </Grid>
+          {mockCharacters
+            .filter((character) => {
+              return characterName.includes(character.name)
+            })
+            .map((character) => {
+              return (
+                <Grid item xs={12} md={4}>
+                  <CharacterCard character={character} />
+                </Grid>
+              )
+            })}
         </Grid>
       </Container>
     </Box>

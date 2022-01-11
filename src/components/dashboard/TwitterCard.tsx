@@ -17,7 +17,7 @@ const TwitterCard: FC<TwitterProps> = ({ twitter }) => {
           padding: 2,
         }}
       >
-        <Icon sx={{ fontSize: 48, color: "#00acee", marginTop: "50%" }}>
+        <Icon sx={{ fontSize: 48, color: "#00acee", marginTop: 1 }}>
           <Twitter sx={{ fontSize: 48 }} />
         </Icon>
       </Box>
