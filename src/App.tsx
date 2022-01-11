@@ -81,10 +81,6 @@ const App: FC = () => {
     handleIncomingMessage(message)
   })
 
-  useEffect(() => {
-    console.log('Connection Status: ', connectionStatue)
-  }, [connectionStatue])
-
   const handleIncomingMessage = (message: Buffer) => {
     const data = JSON.parse(message.toString())
     if (data.name === 'station001') {
