@@ -38,7 +38,7 @@ const mockTwitter: ITwitter = {
     text: "เราว่าน้องเค้า . . . . น่ารักดีนะ \nตอนนี้ประกอบอาหารเก่งขึ้นกว่าเมื่อก่อนแล้วละ\nเมื่อก่อนเทนมใส่คอนเฟลกก็เท่แล้ว55… https://t.co/d4xTPQdZpy",
   },
 }
-export default function App() {
+const App: FunctionComponent = () => {
   const [connectionStatue, setConnectionStatue] = useState("connecting")
   const topic = "e775b1245d94ea4a79be6ce40cf96929"
   const [station001, setStation001] = useState<IWeather>(mockStation001)
@@ -153,3 +153,5 @@ export default function App() {
     </Box>
   )
 }
+
+export default App
