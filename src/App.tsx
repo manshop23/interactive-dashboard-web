@@ -72,8 +72,14 @@ const App: FC = () => {
   const [station002, setStation002] = useState<IWeather>(mockStation002)
   const [pm25001, setPm25001] = useState<IPM25>(mockPM25)
   const [twitter, setTwitter] = useState<ITwitter>(mockTwitter)
-  const topic = 'e775b1245d94ea4a79be6ce40cf96929'
-  const client = connect('ws://broker.hivemq.com:8000/mqtt')
+  const topic = process.env.REACT_APP_TOPIC || ''
+  // const client = connect('ws://broker.hivemq.com:8000/mqtt')
+  const options = {
+    username: process.env.REACT_APP_USER_MQTT,
+    password: process.env.REACT_APP_PASS_MQTT
+  }
+  const client = connect(process.env.REACT_APP_BROKER, options)
+
   client.on('connect', function () {
     setConnectionStatue('connected')
     client.subscribe(topic)
